@@ -5,14 +5,47 @@ import email from '../../../assets/email.svg'
 import lock from '../../../assets/lock.svg'
 import eye from '../../../assets/eye.svg'
 import person from '../../../assets/person.svg'
-import suggest from '../../../assets/suggest.svg'
+import suggest from '../../../assets/suggest.svg';
+import axios from 'axios';
+import { useSignup } from '../../../hooks/useSignup';
 
 const SignupForm = () => {
 
-    const [Email, setEmail] = useState('');
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState("");
 
-    
+    const handleNameChange = (value) => {
+        setName(value);
+    }
+    const handleEmailChange = (value) => {
+        setEmail(value);
+    }
+    const handlePasswordChange = (value) => {
+        setPassword(value);
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        const user = {
+            name: name,
+            email: email,
+            password: password
+        };
+
+        axios.post(`https://localhost:7152/api/Authenticate/register`, { user })
+            .then(res => {
+                console.log(res);
+                console.log(res.data);
+            })
+
+    }
+
+
+
+
+
     return (
         <div className='signup-form-container'>
             <h6 className='form-title'>
@@ -22,11 +55,11 @@ const SignupForm = () => {
                 Fill the brackets down below with your information
             </p>
 
-            <form action="" className='signup-form'>
+            <form action="" className='signup-form' onSubmit={handleSubmit}>
                 <div className="name-input-container">
                     <div className="name">
                         <label htmlFor="">
-                            Name
+                            UserName
                         </label>
                         <div className="inner-input-container">
                             <span className="person-icon" style={{ content: `url(${person})` }}></span>
@@ -35,10 +68,11 @@ const SignupForm = () => {
                                 name='name'
                                 placeholder='Enter your name'
                                 className='form-input'
+                                onChange={(e) => handleNameChange(e.target.value)}
                             />
                         </div>
                     </div>
-                    <div className="last-name">
+                    {/* <div className="last-name">
                         <label htmlFor="">
                             Last name
                         </label>
@@ -49,9 +83,10 @@ const SignupForm = () => {
                                 name='name'
                                 placeholder='Enter your last name'
                                 className='form-input'
+                                onChange={(e) => handleLastNameChange(e.target.value)}
                             />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="email">
@@ -64,7 +99,7 @@ const SignupForm = () => {
                             <input
                                 type="email"
                                 name='email'
-                                onChange={(e) => setEmail(e.target.value)}
+                                onChange={(e) => handleEmailChange(e.target.value)}
                                 placeholder='Enter your email'
                                 className='form-input'
                             />
@@ -82,14 +117,14 @@ const SignupForm = () => {
                             <input
                                 type="password"
                                 name='password'
-                                onChange={(e) => setPassword(e.target.value)}
+                                onChange={(e) => handlePasswordChange(e.target.value)}
                                 placeholder='Enter your password'
                                 className='form-input'
                             />
                             <span className="eye-icon" style={{ content: `url(${eye})` }}></span>
                         </div>
                     </div>
-                    <div className="confirm-password">
+                    {/* <div className="confirm-password">
                         <label htmlFor="">
                             Confirm Password
                         </label>
@@ -104,7 +139,7 @@ const SignupForm = () => {
                             />
                             <span className="eye-icon" style={{ content: `url(${eye})` }}></span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 
                 <Link to='/' className="suggest-password">

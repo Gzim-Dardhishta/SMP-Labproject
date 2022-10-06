@@ -7,7 +7,7 @@ const LogIn = () => {
   return (
     <div>
         <Navbar />
-        <LoginForm />
+        <LoginForm/>
         <Footer />
     </div>
   )

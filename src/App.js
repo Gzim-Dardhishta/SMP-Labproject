@@ -8,8 +8,10 @@ import './App.css';
 import Home from './Pages/Home';
 import LogIn from './Pages/Auth/LogIn';
 import SignUp from './Pages/Auth/SignUp';
+import React, { useState } from 'react';
 
 function App() {
+
   return (
     <div className="App">
       <Router>

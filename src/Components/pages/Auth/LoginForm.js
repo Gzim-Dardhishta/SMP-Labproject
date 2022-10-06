@@ -1,14 +1,30 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import './style/login.scss'
-import email from '../../../assets/email.svg'
+import person from '../../../assets/person.svg'
 import lock from '../../../assets/lock.svg'
-import eye from '../../../assets/eye.svg'
+import eye from '../../../assets/eye.svg';
+import axios from 'axios';
+
 
 const LoginForm = () => {
 
-  const [Email, setEmail] = useState('');
+  const [name, setName] = useState('');
   const [password, setPassword] = useState("");
+
+
+  const handleNameChange = (value) => {
+    setName(value);
+  }
+  const handlePasswordChange = (value) => {
+    setPassword(value);
+  }
+
+  const handleLogIn = () => {
+    console.log("hello")
+  }
+
+
   return (
     <div className='form-container'>
       <h6 className='form-title'>
@@ -21,15 +37,15 @@ const LoginForm = () => {
       <form action="">
         <div className="input-container">
           <label htmlFor="">
-            Email
+            UserName
           </label>
           <div className="inner-input-container">
-            <span className="email-icon" style={{ content: `url(${email})` }}></span>
+            <span className="email-icon" style={{ content: `url(${person})` }}></span>
             <input
-              type="email"
-              name='email'
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder='Enter your email'
+              type="name"
+              name='name'
+              onChange={(e) => handleNameChange(e.target.value)}
+              placeholder='Enter your username'
               className='form-input'
             />
           </div>
@@ -44,7 +60,7 @@ const LoginForm = () => {
             <input
               type="password"
               name='password'
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => handlePasswordChange(e.target.value)}
               placeholder='Enter your email'
               className='form-input'
             />
@@ -65,7 +81,7 @@ const LoginForm = () => {
         </div>
 
         <div className='button-container'>
-          <button type='submit' className='submit-button'>
+          <button type='submit' className='submit-button' onClick={() => handleLogIn()}>
             Log In
           </button>
         </div>

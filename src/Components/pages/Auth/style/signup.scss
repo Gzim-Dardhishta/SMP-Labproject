@@ -24,18 +24,15 @@
 
     form {
 
-        .name-input-container,
-        .password-input-container {
+        .name-input-container {
             display: flex;
             justify-content: space-between;
 
-            .name,
-            .last-name,
-            .password,
-            .confirm-password {
-                width: 46%;
+            .name{
+                width: 100%;
             }
         }
+
 
         .input-container,
         .name,
