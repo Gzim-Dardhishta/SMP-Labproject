@@ -1,0 +1,85 @@
+.sidebar-logo-row h6{
+    font-size: 1.3em;
+    color: #333;
+    font-weight: 400;
+}
+
+.mobile-sidebar-links{
+    .nav-sidebar-link{
+        display: flex;
+        justify-content: space-between;
+        padding: 1em 1.2em .9em;
+        border-bottom: 1px solid #aaa;
+        border-left: 4px solid transparent;
+        a{
+            font-size: 1.1em;
+            width: 160px;
+            display: flex;
+            align-items: center;
+            color: #444;
+            svg{
+                font-size: 20px;
+                margin-right: 10px;
+                color: #6C3DFF;
+            }
+        }
+        &:hover{
+            border-left: 4px solid #6C3DFF;
+        }
+    }
+
+    .dropdown-arrow{
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        font-size: 22px;
+        margin-bottom: -3px;
+        color: #777;
+        cursor: pointer;
+    }
+}
+
+.mobile-nav .inner-links{
+    margin: 0;
+    h5{
+        padding: 20px 10px 10px 50px;
+        font-size: 16px;
+        color: #6C3DFF;
+    }
+    a{
+        padding: 10px 10px 10px 55px;
+        border-bottom: 1px solid #aaa;
+        color: #555;
+        font-size: 15px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        &:hover{
+            color: #6C3DFF;
+        }
+    }
+
+    .title{
+        color: #444;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+}
+
+.sidebar-auth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.3em;
+    margin: 50px 0px;
+
+    a{
+        font-size: 1.2em;
+        padding: 10px 20px;
+        border: 1px solid #6C3DFF;
+        background-color: #6C3DFF;
+        color: #fff;
+        border-radius: 10px;
+    }
+}

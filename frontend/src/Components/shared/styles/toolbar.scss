@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Amaranth&display=swap');
+
+.navbar .mobile-toolbar {
+    background-color: #fff;
+    border-bottom: .5px solid #ddd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2em 5%;
+
+    .mobile-logo-row{
+        display: flex;
+        align-items: center;
+        a{
+            display: flex;
+            align-items: center;
+            gap: 1em;
+            h5{
+                font-size: 1.2em;
+                color: #222;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 400;
+            }
+        }
+    }
+    button{
+        border: 0;
+        background-color: transparent;
+        font-size: 2rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        color: #222;
+    }
+}
+
+.navbar .toolbar__sticky {
+    box-shadow: rgba(99, 99, 99, 0.15) 0px 1.5px 2.5px 0px;
+    transition: 0,3s ease;
+    -webkit-transition: 0.3s ease;
+    background: #fff !important;
+
+    .mobile-logo-row a{
+        h5{
+            color: #222;
+        }
+        button{
+            color: #222 !important;
+        }
+    }
+}

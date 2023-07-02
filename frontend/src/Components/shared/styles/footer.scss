@@ -1,0 +1,46 @@
+.footer{
+    background-image: linear-gradient(178.1deg, #211b53 8.5%, #171445 82.4%);
+    color: #fff;
+    padding: 1.5em 5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 550px) {
+        display: block;
+        padding: 2em;
+    }
+
+    .logo h4{
+        font-weight: 400;
+        font-size: max(24px, 2vw);
+    }
+
+    .center{
+        margin: 2em 1em 1em 0;
+        .copyright{
+            display: flex;
+            gap: 10px;
+    
+            .c-icon{
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+        }
+
+        .policy {
+            display: flex;
+            gap: 23px;
+            a{
+                color: #fff;
+            }
+        }
+    }
+
+    // .authors{
+    //     position: absolute;
+    //     left: 85%;
+    //     top: 30%;
+    // }
+}

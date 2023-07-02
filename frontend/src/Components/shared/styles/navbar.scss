@@ -1,0 +1,129 @@
+#navbar {
+    width: 100%;
+    padding: max(1em, 1.1vw) 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-bottom: 2px solid #4000ff;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    .logo {
+        h1 {
+            font-weight: 600;
+
+            a {
+                color: #111;
+                text-decoration: none;
+            }
+        }
+
+        &:hover {
+            transition: .3s ease-in;
+            color: #6C3DFF;
+            cursor: pointer;
+        }
+    }
+
+    .auth {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+
+        .auth-btn {
+            display: flex;
+
+            .log-in,
+            .sign-up {
+                padding: .7em 1.5em;
+            }
+
+            .sign-up {
+                background-color: #6C3DFF;
+                border-radius: 2em;
+                cursor: pointer;
+
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                }
+
+                &:hover {
+                    background-color: #fff;
+                    transition: .5s ease;
+
+                    a {
+                        color: #6C3DFF;
+                    }
+                }
+            }
+
+            .log-in {
+                a {
+                    color: #6C3DFF;
+                    text-decoration: none;
+                }
+
+                &:hover {
+                    background-color: #6C3DFF;
+                    border-radius: 2em;
+                    transition: .5s ease;
+                    cursor: pointer;
+
+                    a {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        .logout {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            .dashboard{
+                color: #111;
+                padding: 0;
+                margin: 0;
+                height: fit-content;
+            }
+
+            p {
+                padding: 0;
+                margin: 0;
+            }
+            .username{
+                white-space: nowrap;
+            }
+
+            .logout-btn {
+                border: 0;
+                padding: .8em 1.5em;
+                background-color: #6C3DFF;
+                color: #fff;
+                border-radius: 2em;
+                font-size: 1em;
+            }
+        }
+    }
+}
+
+@media (max-width: 1020px) {
+    #navbar {
+        // display: none;
+        #logo,
+        .nav-links,
+        .auth,
+        .media-bar {
+            display: none;
+        }
+
+       .mobile-nav{
+        display: block;
+       }
+    }
+}
